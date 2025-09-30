@@ -143,7 +143,7 @@ def main():
     logging.info("Plotting the world map as the base layer.")
     fig, ax = plt.subplots(figsize=(6,6))
 
-    imgplot = plt.imshow(img,origin="lower",extent=[0,7680,0,8867],cmap="Greys_r")
+    imgplot = plt.imshow(img,origin="lower",extent=(0,7680,0,8867),cmap="Greys_r")
 
     X = np.linspace(0,x_max/3,res)
     Z = np.linspace(0,z_max/3,res)
@@ -155,7 +155,7 @@ def main():
         priceplot = ax.imshow(
             prices.T,
             origin="lower",
-            extent=[0,7680,0,7680],
+            extent=(0,7680,0,7680),
             alpha=0.5,
             cmap="bwr",
             )
